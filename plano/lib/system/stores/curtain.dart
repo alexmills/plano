@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 */
 
 class CurtainStore extends ChangeNotifier {
-  int index = 0;
+  int index = 1;
 
   void showCurtain() {
     index = 0;

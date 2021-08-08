@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:plano/system/stores/curtain.dart';
-import 'package:provider/provider.dart';
+import 'package:plano/system/dock.dart';
+import 'package:plano/system/stage.dart';
 
 /*
 
@@ -15,17 +15,14 @@ import 'package:provider/provider.dart';
 class PlanoLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text("Plano Layout"),
-        TextButton(
-          onPressed: () {
-            var curtain = context.read<CurtainStore>();
-            curtain.showCurtain();
-          },
-          child: Text('Show Curtains'),
-        )
-      ],
+    return Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(child: Stage()),
+          Dock(),
+        ],
+      ),
     );
   }
 }
