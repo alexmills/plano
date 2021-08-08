@@ -20,11 +20,12 @@ class SceneSwitcher extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
+
     return Consumer<SceneStore>(builder: (context, scene, child) {
       return Container(
         width: 620,
         padding: EdgeInsets.fromLTRB(40, 20, 40, 0),
-        color: Colors.lightGreen,
         child: GridView.count(
           primary: true,
           crossAxisCount: 5,
@@ -32,7 +33,9 @@ class SceneSwitcher extends StatelessWidget {
           childAspectRatio: 1.35,
           children: List.generate(iconList.length, (index) {
             return Material(
-              color: (index == scene.index) ? Colors.black : Colors.white,
+              color: scene.isSelected(index)
+                  ? theme.accentColor
+                  : theme.primaryColorDark,
               borderRadius: BorderRadius.circular(6),
               child: InkWell(
                 onTap: () {
@@ -40,7 +43,9 @@ class SceneSwitcher extends StatelessWidget {
                 },
                 child: Icon(
                   iconList[index],
-                  color: (index == scene.index) ? Colors.white : Colors.black,
+                  color: scene.isSelected(index)
+                      ? theme.primaryColor
+                      : theme.accentColor,
                   size: 36,
                 ),
               ),

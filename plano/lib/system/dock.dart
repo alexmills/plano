@@ -17,7 +17,7 @@ class Dock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.yellow,
+      color: Theme.of(context).primaryColor,
       height: 100,
       child: Row(
         children: [

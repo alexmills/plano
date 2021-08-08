@@ -14,11 +14,27 @@ import 'package:provider/provider.dart';
 */
 
 class PlanoApp extends StatelessWidget {
+  final theme = ThemeData(
+    primaryColor: Colors.white,
+    primaryColorBrightness: Brightness.light,
+    accentColor: Colors.black,
+    accentColorBrightness: Brightness.dark,
+    primaryColorDark: Color(0xfff2f2f6),
+  );
+
+  final theme_dark = ThemeData(
+    primaryColor: Colors.black,
+    primaryColorBrightness: Brightness.dark,
+    accentColor: Colors.white,
+    accentColorBrightness: Brightness.light,
+    primaryColorDark: Color(0xff1c1c1e),
+  );
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Plano",
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: theme,
       home: CurtainControl(),
     );
   }

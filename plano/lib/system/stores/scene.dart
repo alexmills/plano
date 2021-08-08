@@ -12,6 +12,10 @@ class SceneStore extends ChangeNotifier {
   int index = 4;
   List<bool> selectedTab = generateSelectedTab(4);
 
+  bool isSelected(int test_index) {
+    return test_index == index;
+  }
+
   void setNewIndex(int new_index) {
     index = new_index;
     selectedTab = generateSelectedTab(new_index);
