@@ -13,3 +13,9 @@ Plano is an attempt to build a new headunit for my 2019 Toyota Hilux, which curr
 ## What's next?
 
 I'll continue to build this readme out as the project progresses. I'll be posting updates on [dev.to](https://dev.to/alexmills) and more than likely, [Twitter](https://twitter.com/alexmills) and [Instagram](https://instagram.com/alexmills). 
+
+## What does it look like
+
+![Plano Working UI State](https://raw.githubusercontent.com/alexmills/plano/main/screenshots/current_state.png)
+
+The above screenshot is the latest captured state of the project.
