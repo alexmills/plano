@@ -26,11 +26,11 @@ class Stage extends StatelessWidget {
           return IndexedStack(
             index: scene.index,
             children: [
-              NavigationScene(),
-              AudioScene(),
-              TelephonyScene(),
-              VehicleScene(),
               SettingsScene(),
+              VehicleScene(),
+              TelephonyScene(),
+              AudioScene(),
+              NavigationScene(),
             ],
           );
         },
