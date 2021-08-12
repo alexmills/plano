@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plano/system/curtain.dart';
 import 'package:plano/system/layout.dart';
 import 'package:plano/system/stores/curtain.dart';
+import 'package:plano/system/stores/theme.dart';
 import 'package:provider/provider.dart';
 
 /*
@@ -14,29 +15,15 @@ import 'package:provider/provider.dart';
 */
 
 class PlanoApp extends StatelessWidget {
-  final theme = ThemeData(
-    primaryColor: Colors.white,
-    primaryColorBrightness: Brightness.light,
-    accentColor: Colors.black,
-    accentColorBrightness: Brightness.dark,
-    primaryColorDark: Color(0xfff2f2f6),
-  );
-
-  final theme_dark = ThemeData(
-    primaryColor: Colors.black,
-    primaryColorBrightness: Brightness.dark,
-    accentColor: Colors.white,
-    accentColorBrightness: Brightness.light,
-    primaryColorDark: Color(0xff1c1c1e),
-  );
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Plano",
-      theme: theme,
-      home: CurtainControl(),
-    );
+    return Consumer<ThemeStore>(builder: (context, store, child) {
+      return MaterialApp(
+        title: "Plano",
+        theme: store.theme,
+        home: CurtainControl(),
+      );
+    });
   }
 }
 
