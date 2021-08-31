@@ -1,18 +1,15 @@
-import 'package:flutter/material.dart';
-import 'package:plano/system/stores/curtain.dart';
-import 'package:provider/provider.dart';
-
 /*
 
-  CurtainWidget
-  -------------
-
-  This widget controls the layout of the sleep/wake screen when
-  the vehicle changes power modes
+  Television Camera Layout
+  ------------------------
 
 */
 
-class CurtainWidget extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:plano/stores/director.dart';
+import 'package:provider/provider.dart';
+
+class TelevisionLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -21,7 +18,7 @@ class CurtainWidget extends StatelessWidget {
         children: [
           Container(
             child: Text(
-              'Curtains',
+              'Television',
               style: Theme.of(context).textTheme.headline4,
             ),
             padding: EdgeInsets.all(20),
@@ -33,10 +30,10 @@ class CurtainWidget extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              var curtain = context.read<CurtainStore>();
-              curtain.hideCurtain();
+              var director = context.read<DirectorStore>();
+              director.hideSleepLayout();
             },
-            child: Text('Hide Curtain'),
+            child: Text('Hide Television'),
           ),
         ],
       ),

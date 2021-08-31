@@ -9,9 +9,9 @@
 */
 
 import 'package:flutter/material.dart';
-import 'package:plano/system/clock.dart';
-import 'package:plano/system/nowplaying.dart';
-import 'package:plano/system/switcher.dart';
+import 'package:plano/layouts/plano/clock.dart';
+import 'package:plano/layouts/plano/nowplaying.dart';
+import 'package:plano/layouts/plano/switcher.dart';
 
 class Dock extends StatelessWidget {
   @override
