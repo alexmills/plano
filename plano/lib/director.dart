@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plano/layouts/oncall.dart';
 import 'package:plano/layouts/plano.dart';
 import 'package:plano/layouts/sleep.dart';
 import 'package:plano/layouts/television.dart';
@@ -18,6 +19,7 @@ class DirectorControl extends StatelessWidget {
               children: [
                 PlanoLayout(),
                 TelevisionLayout(),
+                OnCallLayout(),
                 SleepWakeLayout(),
               ],
             );

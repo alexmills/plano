@@ -31,10 +31,21 @@ class DirectorStore extends ChangeNotifier {
     showMasterLayout();
   }
 
+  /* Active Call Layout */
+
+  void showOnCallLayout() {
+    index = 2;
+    notifyListeners();
+  }
+
+  void hideOnCallLayout() {
+    showMasterLayout();
+  }
+
   /* Sleep/Wake Layout Control */
 
   void showSleepLayout() {
-    index = 2;
+    index = 3;
     notifyListeners();
   }
 
