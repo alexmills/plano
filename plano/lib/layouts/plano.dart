@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:plano/system/dock.dart';
-import 'package:plano/system/stage.dart';
+import 'package:plano/layouts/plano/dock.dart';
+import 'package:plano/layouts/plano/stage.dart';
 
 /*
 

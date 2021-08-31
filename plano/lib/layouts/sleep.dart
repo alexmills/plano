@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:plano/system/stores/curtain.dart';
+import 'package:plano/system/stores/director.dart';
 import 'package:provider/provider.dart';
 
 /*
 
-  CurtainWidget
+  SleepWakeWidget
   -------------
 
   This widget controls the layout of the sleep/wake screen when
@@ -12,7 +12,7 @@ import 'package:provider/provider.dart';
 
 */
 
-class CurtainWidget extends StatelessWidget {
+class SleepWakeLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -33,8 +33,8 @@ class CurtainWidget extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              var curtain = context.read<CurtainStore>();
-              curtain.hideCurtain();
+              var director = context.read<DirectorStore>();
+              director.hideSleepLayout();
             },
             child: Text('Hide Curtain'),
           ),

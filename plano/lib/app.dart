@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:plano/system/curtain.dart';
-import 'package:plano/system/layout.dart';
-import 'package:plano/system/stores/curtain.dart';
+import 'package:plano/system/director.dart';
 import 'package:plano/system/stores/theme.dart';
 import 'package:provider/provider.dart';
 
@@ -21,40 +19,8 @@ class PlanoApp extends StatelessWidget {
       return MaterialApp(
         title: "Plano",
         theme: store.theme,
-        home: CurtainControl(),
+        home: DirectorControl(),
       );
     });
-  }
-}
-
-/*
-
-  CurtainControl
-  --------------
-
-  This widget controls the visibility of the sleep/lock screen when the 
-  vehicle is powered on and off. Otherwise the main layout is displayed.
-
-*/
-
-class CurtainControl extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        alignment: Alignment.topLeft,
-        child: Consumer<CurtainStore>(
-          builder: (context, curtain, child) {
-            return IndexedStack(
-              index: curtain.index,
-              children: [
-                CurtainWidget(),
-                PlanoLayout(),
-              ],
-            );
-          },
-        ),
-      ),
-    );
   }
 }
