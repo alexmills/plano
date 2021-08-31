@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:plano/app.dart';
-import 'package:plano/system/stores/director.dart';
-import 'package:plano/system/stores/scene.dart';
-import 'package:plano/system/stores/theme.dart';
+import 'package:plano/stores/director.dart';
+import 'package:plano/stores/scene.dart';
+import 'package:plano/stores/theme.dart';
 import 'package:provider/provider.dart';
 
 void main() {

@@ -6,7 +6,7 @@
 */
 
 import 'package:flutter/material.dart';
-import 'package:plano/system/stores/scene.dart';
+import 'package:plano/stores/scene.dart';
 import 'package:provider/provider.dart';
 
 class SceneSwitcher extends StatelessWidget {

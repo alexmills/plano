@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:plano/system/stores/director.dart';
+import 'package:plano/stores/director.dart';
 import 'package:provider/provider.dart';
 
 /*

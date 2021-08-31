@@ -6,7 +6,7 @@
 */
 
 import 'package:flutter/material.dart';
-import 'package:plano/system/stores/theme.dart';
+import 'package:plano/stores/theme.dart';
 import 'package:provider/provider.dart';
 
 class SettingsScene extends StatelessWidget {

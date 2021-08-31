@@ -14,7 +14,7 @@ import 'package:plano/scenes/navigation.dart';
 import 'package:plano/scenes/settings.dart';
 import 'package:plano/scenes/telephony.dart';
 import 'package:plano/scenes/vehicle.dart';
-import 'package:plano/system/stores/scene.dart';
+import 'package:plano/stores/scene.dart';
 
 class Stage extends StatelessWidget {
   @override
