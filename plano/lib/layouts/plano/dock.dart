@@ -9,7 +9,7 @@
 */
 
 import 'package:flutter/material.dart';
-import 'package:plano/layouts/plano/clock.dart';
+import 'package:plano/layouts/plano/tray.dart';
 import 'package:plano/layouts/plano/nowplaying.dart';
 import 'package:plano/layouts/plano/switcher.dart';
 import 'package:plano/stores/settings.dart';
@@ -22,7 +22,7 @@ class Dock extends StatelessWidget {
       final widgets = [
         NowPlaying(),
         Expanded(child: SceneSwitcher()),
-        Clock(),
+        Tray(),
       ];
 
       return Container(
