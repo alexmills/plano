@@ -10,7 +10,7 @@ import 'package:plano/stores/scene.dart';
 import 'package:provider/provider.dart';
 
 class SceneSwitcher extends StatelessWidget {
-  List<IconData> iconList = [
+  final List<IconData> iconList = [
     Icons.settings_outlined,
     Icons.directions_car_outlined,
     Icons.phone_outlined,
@@ -24,13 +24,12 @@ class SceneSwitcher extends StatelessWidget {
 
     return Consumer<SceneStore>(builder: (context, scene, child) {
       return Container(
-        width: 620,
-        padding: EdgeInsets.fromLTRB(40, 20, 40, 0),
+        padding: EdgeInsets.fromLTRB(40, 15, 40, 10),
         child: GridView.count(
           primary: true,
           crossAxisCount: 5,
           crossAxisSpacing: 35,
-          childAspectRatio: 1.35,
+          childAspectRatio: 1.7,
           children: List.generate(iconList.length, (index) {
             return Material(
               color: scene.isSelected(index)

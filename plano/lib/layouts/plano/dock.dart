@@ -21,9 +21,9 @@ class Dock extends StatelessWidget {
       height: 100,
       child: Row(
         children: [
+          NowPlaying(),
+          Expanded(child: SceneSwitcher()),
           Clock(),
-          Expanded(child: NowPlaying()),
-          SceneSwitcher(),
         ],
       ),
     );
