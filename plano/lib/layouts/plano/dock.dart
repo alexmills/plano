@@ -12,20 +12,27 @@ import 'package:flutter/material.dart';
 import 'package:plano/layouts/plano/clock.dart';
 import 'package:plano/layouts/plano/nowplaying.dart';
 import 'package:plano/layouts/plano/switcher.dart';
+import 'package:plano/stores/settings.dart';
+import 'package:provider/provider.dart';
 
 class Dock extends StatelessWidget {
+  final widgets = [
+    Clock(),
+    Expanded(child: SceneSwitcher()),
+    NowPlaying(),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Theme.of(context).primaryColor,
-      height: 100,
-      child: Row(
-        children: [
-          NowPlaying(),
-          Expanded(child: SceneSwitcher()),
-          Clock(),
-        ],
-      ),
-    );
+    return Consumer<SettingsStore>(builder: (context, settings, child) {
+      return Container(
+        color: Theme.of(context).primaryColor,
+        height: 100,
+        child: Row(
+          children:
+              (settings.isRightHandDrive) ? widgets.reversed.toList() : widgets,
+        ),
+      );
+    });
   }
 }
