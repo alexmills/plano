@@ -12,7 +12,7 @@ Plano is an attempt to build a new headunit for my 2019 Toyota Hilux, which curr
 
 ## What's next?
 
-I'll continue to build this readme out as the project progresses. I'll be posting updates on [hashnode](https://alexmills.hashnode.dev) and more than likely, [Twitter](https://twitter.com/alexmills) and [Instagram](https://instagram.com/thealexmills). 
+I'll continue to build this readme out as the project progresses. I'll be posting updates on [hashnode](https://alexmills.hashnode.dev) and more than likely, [Twitter](https://twitter.com/thealexmills) and [Instagram](https://instagram.com/thealexmills). 
 
 ## What does it look like
 
