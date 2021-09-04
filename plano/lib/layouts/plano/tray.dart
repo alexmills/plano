@@ -9,6 +9,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:plano/layouts/plano/status.dart';
 
 class Tray extends StatelessWidget {
   @override
@@ -18,7 +19,8 @@ class Tray extends StatelessWidget {
       color: Colors.amber,
       child: Row(
         children: [
-          TrayDateTime(),
+          Expanded(child: TrayDateTime()),
+          TrayStatus(),
         ],
       ),
     );
@@ -63,8 +65,10 @@ class _TrayDateTimeState extends State<TrayDateTime> {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Text(DateFormat("h:m a").format(_now)),
+          Text(DateFormat("h:mm a").format(_now)),
           Text(DateFormat("E d").format(_now)),
         ],
       ),
