@@ -24,4 +24,4 @@ The above screenshot is the latest captured state of the project.
 
 Hopefully something like this anyway...
 
-![Plano Working UI State](https://raw.githubusercontent.com/alexmills/plano/main/mockups/initial/Map%20Light.png)
+![Plano Working UI State](mockups/v7/Map.png)
