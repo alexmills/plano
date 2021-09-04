@@ -64,8 +64,8 @@ class _TrayDateTimeState extends State<TrayDateTime> {
     return Container(
       child: Column(
         children: [
-          Text(DateFormat("Hms").format(_now)),
-          Text("Date"),
+          Text(DateFormat("h:m a").format(_now)),
+          Text(DateFormat("E d").format(_now)),
         ],
       ),
     );
