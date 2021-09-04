@@ -10,7 +10,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:plano/layouts/plano/tray.dart';
-import 'package:plano/layouts/plano/nowplaying.dart';
+import 'package:plano/layouts/plano/volume.dart';
 import 'package:plano/layouts/plano/switcher.dart';
 import 'package:plano/stores/settings.dart';
 import 'package:provider/provider.dart';
@@ -20,7 +20,7 @@ class Dock extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<SettingsStore>(builder: (context, settings, child) {
       final widgets = [
-        NowPlaying(),
+        VolumeControl(),
         Expanded(child: SceneSwitcher()),
         Tray(),
       ];
