@@ -24,4 +24,4 @@ The above screenshot is the latest captured state of the project.
 
 Hopefully something like this anyway...
 
-![Plano Working UI State](mockups/v11/settings.png)
+![Plano Working UI State](mockups/v11/Settings.png)
