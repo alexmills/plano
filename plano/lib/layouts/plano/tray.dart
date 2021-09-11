@@ -30,7 +30,6 @@ class Tray extends StatelessWidget {
 
       return Container(
         width: 250,
-        color: Colors.amber,
         padding: EdgeInsets.only(left: K_PAD_EDGE, right: K_PAD_EDGE),
         child: Row(
             children: (settings.isRightHandDrive)

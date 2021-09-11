@@ -17,15 +17,16 @@ class ThemeStore extends ChangeNotifier {
     accentColorBrightness: Brightness.dark,
     primaryColorDark: Color(0xfff2f2f6),
     textTheme: text,
+    // Dock
+    bottomAppBarColor: Color(0xFF263238),
   );
 
-  static ThemeData dark = ThemeData(
+  static ThemeData dark = light.copyWith(
     primaryColor: Colors.black,
     primaryColorBrightness: Brightness.dark,
     accentColor: Colors.white,
     accentColorBrightness: Brightness.light,
     primaryColorDark: Color(0xff1c1c1e),
-    textTheme: text,
   );
 
   ThemeData theme = light;
