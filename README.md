@@ -16,7 +16,7 @@ I'll continue to build this readme out as the project progresses. I'll be postin
 
 ## What does it look like
 
-![Plano Working UI State](https://raw.githubusercontent.com/alexmills/plano/main/screenshots/current_state.png)
+![Plano Working UI State](screenshots/current_state.png)
 
 The above screenshot is the latest captured state of the project.
 
@@ -24,4 +24,4 @@ The above screenshot is the latest captured state of the project.
 
 Hopefully something like this anyway...
 
-![Plano Working UI State](mockups/v7/Map.png)
+![Plano Working UI State](mockups/v11/settings.png)
