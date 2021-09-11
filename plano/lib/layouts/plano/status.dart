@@ -6,7 +6,6 @@ class TrayStatus extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(17, 0, 30, 0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
