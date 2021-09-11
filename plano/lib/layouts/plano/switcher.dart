@@ -38,15 +38,11 @@ class SceneSwitcher extends StatelessWidget {
       ];
 
       return Container(
-        padding: EdgeInsets.fromLTRB(40, 15, 40, 10),
-        child: GridView.count(
-          primary: true,
-          crossAxisCount: 5,
-          crossAxisSpacing: 35,
-          childAspectRatio: 1.7,
-          children: (settings.isRightHandDrive)
-              ? controls
-              : controls.reversed.toList(),
+        padding: EdgeInsets.symmetric(horizontal: 80),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children:
+              settings.isRightHandDrive ? controls : controls.reversed.toList(),
         ),
       );
     });
@@ -63,17 +59,23 @@ class SwitcherButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: selected ? theme.accentColor : theme.primaryColorDark,
-      borderRadius: BorderRadius.circular(6),
-      child: InkWell(
-        onTap: () {
-          action();
-        },
-        child: Icon(
-          icon,
-          color: selected ? theme.primaryColor : theme.accentColor,
-          size: 36,
+    final border = BorderRadius.circular(6);
+    return Container(
+      height: 60,
+      width: 80,
+      child: Material(
+        color: selected ? Colors.white : theme.bottomAppBarColor,
+        borderRadius: border,
+        child: InkWell(
+          borderRadius: border,
+          onTap: () {
+            action();
+          },
+          child: Icon(
+            icon,
+            color: selected ? theme.bottomAppBarColor : Colors.white,
+            size: 36,
+          ),
         ),
       ),
     );

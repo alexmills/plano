@@ -19,7 +19,6 @@ class VolumeControl extends StatelessWidget {
 
       return Container(
         width: 250,
-        color: Colors.brown,
         padding: EdgeInsets.only(left: 30),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -46,12 +45,13 @@ class VolumeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
       height: 52,
       width: 52,
       margin: EdgeInsets.only(right: 15),
       child: Material(
-        color: Colors.black,
+        color: theme.bottomAppBarColor,
         child: InkWell(
           onTap: () {
             action();
