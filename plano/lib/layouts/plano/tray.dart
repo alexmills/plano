@@ -78,6 +78,8 @@ class _TrayDateTimeState extends State<TrayDateTime> {
   @override
   Widget build(BuildContext context) {
     return Consumer<SettingsStore>(builder: (builder, settings, child) {
+      TextTheme style = Theme.of(context).textTheme;
+
       final alignment = (settings.isRightHandDrive)
           ? CrossAxisAlignment.end
           : CrossAxisAlignment.start;
@@ -88,8 +90,14 @@ class _TrayDateTimeState extends State<TrayDateTime> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: alignment,
           children: [
-            Text(DateFormat("h:mm a").format(_now)),
-            Text(DateFormat("E d").format(_now)),
+            Text(
+              DateFormat("h:mm a").format(_now),
+              style: style.headline5,
+            ),
+            Text(
+              DateFormat("E d").format(_now).toUpperCase(),
+              style: style.headline6,
+            ),
           ],
         ),
       );
