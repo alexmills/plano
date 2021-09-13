@@ -25,16 +25,36 @@ class SceneSwitcher extends StatelessWidget {
     return Consumer2<SceneStore, SettingsStore>(
         builder: (context, scene, settings, child) {
       final controls = [
-        SwitcherButton(theme, Icons.settings_outlined, scene.isSettingsScene(),
-            scene.showSettingsScene),
-        SwitcherButton(theme, Icons.directions_car_outlined,
-            scene.isVehicleScene(), scene.showVehicleScene),
-        SwitcherButton(theme, Icons.phone_outlined, scene.isTelephonyScene(),
-            scene.showTelephonyScene),
-        SwitcherButton(theme, Icons.music_note_outlined, scene.isAudioScene(),
-            scene.showAudioScene),
-        SwitcherButton(theme, Icons.map_outlined, scene.isNavigationScene(),
-            scene.showNavigationScene),
+        SwitcherButton(
+          icon: Icons.settings_outlined,
+          theme: theme,
+          selected: scene.isSettingsScene(),
+          action: scene.showSettingsScene,
+        ),
+        SwitcherButton(
+          icon: Icons.directions_car_outlined,
+          theme: theme,
+          selected: scene.isVehicleScene(),
+          action: scene.showVehicleScene,
+        ),
+        SwitcherButton(
+          icon: Icons.phone_outlined,
+          theme: theme,
+          selected: scene.isTelephonyScene(),
+          action: scene.showTelephonyScene,
+        ),
+        SwitcherButton(
+          icon: Icons.music_note_outlined,
+          theme: theme,
+          selected: scene.isAudioScene(),
+          action: scene.showAudioScene,
+        ),
+        SwitcherButton(
+          icon: Icons.map_outlined,
+          theme: theme,
+          selected: scene.isNavigationScene(),
+          action: scene.showNavigationScene,
+        ),
       ];
 
       return Container(
@@ -55,27 +75,30 @@ class SwitcherButton extends StatelessWidget {
   final ThemeData theme;
   final Function action;
 
-  SwitcherButton(this.theme, this.icon, this.selected, this.action);
+  SwitcherButton({
+    required this.icon,
+    required this.theme,
+    required this.selected,
+    required this.action,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final border = BorderRadius.circular(6);
+    final radius = BorderRadius.circular(6);
+    final background = selected ? Colors.white : theme.bottomAppBarColor;
+    final foreground = selected ? theme.bottomAppBarColor : Colors.white;
     return Container(
       height: 60,
       width: 80,
       child: Material(
-        color: selected ? Colors.white : theme.bottomAppBarColor,
-        borderRadius: border,
+        color: background,
+        borderRadius: radius,
         child: InkWell(
-          borderRadius: border,
+          borderRadius: radius,
           onTap: () {
             action();
           },
-          child: Icon(
-            icon,
-            color: selected ? theme.bottomAppBarColor : Colors.white,
-            size: 36,
-          ),
+          child: Icon(icon, color: foreground, size: 36),
         ),
       ),
     );

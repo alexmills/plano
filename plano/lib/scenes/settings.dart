@@ -6,32 +6,66 @@
 */
 
 import 'package:flutter/material.dart';
-import 'package:plano/stores/theme.dart';
-import 'package:provider/provider.dart';
+import 'package:plano/widgets/detail.dart';
+import 'package:plano/widgets/source.dart';
+import 'package:plano/widgets/split.dart';
 
-class SettingsScene extends StatelessWidget {
+class SettingsScene extends StatefulWidget {
+  @override
+  _SettingsScene createState() => _SettingsScene();
+}
+
+class _SettingsScene extends State<SettingsScene> {
+  int _index = 0;
+
+  setIndex(int index) {
+    setState(() {
+      _index = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Consumer<ThemeStore>(builder: (context, store, child) {
-      return Container(
-        color: Colors.grey,
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Settings"),
-              TextButton(
-                onPressed: store.setDayMode,
-                child: Text("Day Mode"),
-              ),
-              TextButton(
-                onPressed: store.setNightMode,
-                child: Text("Night Mode"),
-              ),
-            ],
+    final theme = Theme.of(context);
+
+    return SplitViewWidget(
+      source: SourceWidget(
+        title: "Settings",
+        children: [
+          SourceButton(
+            icon: Icons.bluetooth,
+            label: "Bluetooth",
+            theme: theme,
+            selected: _index == 0,
+            action: () {
+              setIndex(0);
+            },
           ),
+          SourceButton(
+            icon: Icons.info_outline,
+            label: "About",
+            theme: theme,
+            selected: _index == 1,
+            action: () {
+              setIndex(1);
+            },
+          ),
+        ],
+      ),
+      detail: Container(
+        color: Colors.white,
+        child: IndexedStack(
+          index: _index,
+          children: [
+            DetailWidget(
+              child: Text("Bluetooth", style: theme.textTheme.headline1),
+            ),
+            DetailWidget(
+              child: Text("About", style: theme.textTheme.headline1),
+            ),
+          ],
         ),
-      );
-    });
+      ),
+    );
   }
 }
