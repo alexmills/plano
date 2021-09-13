@@ -32,7 +32,7 @@ class Tray extends StatelessWidget {
         width: 250,
         padding: EdgeInsets.only(left: K_PAD_EDGE, right: K_PAD_EDGE),
         child: Row(
-            children: (settings.isRightHandDrive)
+            children: settings.isRightHandDrive
                 ? widgets
                 : widgets.reversed.toList()),
       );

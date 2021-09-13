@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:plano/stores/settings.dart';
 import 'package:plano/widgets/source.dart';
+import 'package:provider/provider.dart';
 
 class SplitViewWidget extends StatelessWidget {
   final SourceWidget source;
@@ -9,15 +11,19 @@ class SplitViewWidget extends StatelessWidget {
 
   @override
   build(BuildContext context) {
-    return Container(
-      color: Colors.red,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          source,
-          Expanded(child: detail),
-        ],
-      ),
-    );
+    final widgets = [
+      Expanded(child: detail),
+      source,
+    ];
+
+    return Consumer<SettingsStore>(builder: (builder, settings, child) {
+      return Container(
+        child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: settings.isRightHandDrive
+                ? widgets
+                : widgets.reversed.toList()),
+      );
+    });
   }
 }
