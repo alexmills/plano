@@ -19,6 +19,11 @@ class ThemeStore extends ChangeNotifier {
       fontWeight: FontWeight.bold,
       color: Colors.white70,
     ),
+    // Generic Themed Buttons
+    button: TextStyle(
+      fontSize: 22,
+      fontWeight: FontWeight.bold,
+    ),
   );
 
   static ThemeData light = ThemeData(
