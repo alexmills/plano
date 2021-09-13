@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 class ThemeStore extends ChangeNotifier {
   static TextTheme text = TextTheme(
-    // Source Title
+    // Source/Detail Title
     headline1: TextStyle(
       fontSize: 40,
       fontWeight: FontWeight.bold,
+      color: Colors.black,
     ),
     // Dock Time
     headline5: TextStyle(
