@@ -6,7 +6,8 @@
 */
 
 import 'package:flutter/material.dart';
-import 'package:plano/widgets/detail.dart';
+import 'package:plano/scenes/settings/about.dart';
+import 'package:plano/scenes/settings/bluetooth.dart';
 import 'package:plano/widgets/source.dart';
 import 'package:plano/widgets/split.dart';
 
@@ -27,8 +28,6 @@ class _SettingsScene extends State<SettingsScene> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return SplitViewWidget(
       source: SourceWidget(
         title: "Settings",
@@ -55,12 +54,8 @@ class _SettingsScene extends State<SettingsScene> {
         child: IndexedStack(
           index: _index,
           children: [
-            DetailWidget(
-              child: Text("Bluetooth", style: theme.textTheme.headline1),
-            ),
-            DetailWidget(
-              child: Text("About", style: theme.textTheme.headline1),
-            ),
+            SettingsBluetoothDetail(),
+            SettingsAboutDetail(),
           ],
         ),
       ),
