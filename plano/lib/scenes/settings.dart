@@ -16,6 +16,7 @@ class SettingsScene extends StatefulWidget {
 }
 
 class _SettingsScene extends State<SettingsScene> {
+  // Selected Tab
   int _index = 0;
 
   setIndex(int index) {
@@ -35,7 +36,6 @@ class _SettingsScene extends State<SettingsScene> {
           SourceButton(
             icon: Icons.bluetooth,
             label: "Bluetooth",
-            theme: theme,
             selected: _index == 0,
             action: () {
               setIndex(0);
@@ -44,7 +44,6 @@ class _SettingsScene extends State<SettingsScene> {
           SourceButton(
             icon: Icons.info_outline,
             label: "About",
-            theme: theme,
             selected: _index == 1,
             action: () {
               setIndex(1);
@@ -53,7 +52,6 @@ class _SettingsScene extends State<SettingsScene> {
         ],
       ),
       detail: Container(
-        color: Colors.white,
         child: IndexedStack(
           index: _index,
           children: [
