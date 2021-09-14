@@ -6,6 +6,8 @@
 */
 
 import 'package:flutter/material.dart';
+import 'package:plano/scenes/vehicle/gauges.dart';
+import 'package:plano/scenes/vehicle/tpms.dart';
 import 'package:plano/widgets/detail.dart';
 import 'package:plano/widgets/source.dart';
 import 'package:plano/widgets/split.dart';
@@ -52,12 +54,8 @@ class _VehicleScene extends State<VehicleScene> {
         detail: IndexedStack(
           index: _index,
           children: [
-            DetailWidget(
-              child: Text("Gauges"),
-            ),
-            DetailWidget(
-              child: Text("Tire Pressure"),
-            ),
+            VehicleGaugesDetail(),
+            VehicleTPMSDetail(),
           ],
         ));
   }
