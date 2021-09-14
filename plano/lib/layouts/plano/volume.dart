@@ -26,7 +26,7 @@ class VolumeControl extends StatelessWidget {
             Row(
               children: [
                 VolumeButton(Icons.remove, settings.decreaseVolume),
-                VolumeButton(icon, settings.toggleMule),
+                VolumeButton(icon, settings.toggleMute),
                 VolumeButton(Icons.add, settings.increaseVolume),
               ],
             ),
