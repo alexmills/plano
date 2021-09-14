@@ -8,6 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+// Preference Keys
 const P_RHD = 'vehicle_rhd';
 const P_V_LEVEL = 'volume_level';
 const P_V_MUTED = 'volume_muted';
@@ -24,7 +25,6 @@ class SettingsStore extends ChangeNotifier {
   late SharedPreferences preferences;
 
   SettingsStore() {
-    print("STARTING STORE");
     setupPrefrences();
   }
 
