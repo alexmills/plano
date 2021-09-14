@@ -35,19 +35,18 @@ class SourceButton extends StatelessWidget {
   final IconData icon;
   final String label;
   final bool selected;
-  final ThemeData theme;
   final Function action;
 
   SourceButton({
     required this.icon,
     required this.label,
-    required this.theme,
     required this.selected,
     required this.action,
   });
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     final radius = BorderRadius.circular(6);
     final background = selected ? theme.primaryColor : theme.primaryColorLight;
     final foreground = selected ? Colors.white : theme.primaryColor;
