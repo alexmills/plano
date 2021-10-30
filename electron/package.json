@@ -1,0 +1,19 @@
+{
+  "name": "plano",
+  "version": "0.0.1",
+  "description": "Web-based infotainment system",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/alexmills/plano"
+  },
+  "author": "Alex Mills",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^15.3.0"
+  }
+}
