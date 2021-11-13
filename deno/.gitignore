@@ -1,1 +1,3 @@
 *.exe
+node_modules
+.yarn
