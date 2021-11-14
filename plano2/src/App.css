@@ -30,7 +30,7 @@ div.inline-logo .smaller {
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,4 +51,8 @@ div.inline-logo .smaller {
   to {
     transform: rotate(360deg);
   }
+}
+
+.map-container {
+  height: 100vh;
 }

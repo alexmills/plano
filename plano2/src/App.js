@@ -1,38 +1,56 @@
-import React from 'react'
+import React, { useRef, useEffect, useState } from 'react'
+import mapboxgl from '!mapbox-gl' // eslint-disable-line import/no-webpack-loader-syntax
 import logo from './logo.svg'
 import tauriCircles from './tauri.svg'
 import tauriWord from './wordmark.svg'
 import './App.css'
 
+// Mapbox API Access
+mapboxgl.accessToken = 'pk.eyJ1IjoidGhlYWxleG1pbGxzIiwiYSI6ImNrdjNsdGg1NjBybGMzMHFwdHMwNWEzYzkifQ.Z81wKq-Tyx24FFpwEvNGQA';
+
 function App() {
+
+  const mapContainer = useRef(null)
+  const map = useRef(null)
+  const [lng, setLng] = useState(118.577)
+  const [lat, setLat] = useState(-20.313)
+  const [zoom, setZoom] = useState(17)
+
+  useEffect(() => {
+
+    if (map.current) {
+      return
+    }
+
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [lng,lat],
+      pitch: 60,
+      zoom: zoom
+    })
+
+    map.current.on('move', () => {
+      setLng(map.current.getCenter().lng.toFixed(4));
+      setLat(map.current.getCenter().lat.toFixed(4));
+      setZoom(map.current.getZoom().toFixed(2));
+    })
+
+    map.current.on('load', () => {
+      
+    })
+
+    map.current.showPadding = true
+    map.current.setPadding({right: 600})
+    map.current.setBearing(90)
+    
+  })
+
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <div className="inline-logo">
-          <img src={tauriCircles} className="App-logo rotate" alt="logo" />
-          <img src={tauriWord} className="App-logo smaller" alt="logo" />
-        </div>
-        <a
-          className="App-link"
-          href="https://tauri.studio"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Tauri
-        </a>
-        <img src={logo} className="App-logo rotate" alt="logo" />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
+      <div ref={mapContainer} className="map-container" />
     </div>
   )
 }
