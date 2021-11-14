@@ -14,7 +14,7 @@ const html = `
 // run the server here for like next js or something?
 
 const debugMode = true
-const url = debugMode ? "http://0.0.0.0:3000" : `data:text/html,${encodeURIComponent(html)}`
+const url = debugMode ? "http://localhost:3000" : `data:text/html,${encodeURIComponent(html)}`
 
 const web = new Webview({
     title: "Plano",
