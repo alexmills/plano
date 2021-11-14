@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react'
 import mapboxgl from '!mapbox-gl' // eslint-disable-line import/no-webpack-loader-syntax
+import { invoke } from '@tauri-apps/api/tauri'
 import logo from './logo.svg'
 import tauriCircles from './tauri.svg'
 import tauriWord from './wordmark.svg'
@@ -43,13 +44,24 @@ function App() {
     map.current.showPadding = true
     map.current.setPadding({right: 600})
     map.current.setBearing(90)
-    
+
   })
 
-  
+  function invokeRust() {
+    invoke('my_custom_command')
+  }
+
+  function invokeRust2() {
+    invoke('custom_response')
+      .then(message => {
+        alert(message)
+      })
+  }
 
   return (
     <div className="App">
+      <button onClick={invokeRust}>Invoke</button>
+      <button onClick={invokeRust2}>Invoke 2</button>
       <div ref={mapContainer} className="map-container" />
     </div>
   )
